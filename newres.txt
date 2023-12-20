@@ -1,0 +1,35 @@
+folA_1_CU468230	trimethoprim.fsa	Folate pathway antagonist	Trimethoprim	18988680	Purine synthesis;20221027_Jade
+blaOXA-443_1_LC030178	Imipenem, Meropenem
+blaOXA-444_1_CP010800	Imipenem, Meropenem
+mecA	Beta-lactam	Oxacillin
+blaSHV-182_1_KP050489	Cefazolin
+blaSHV-172_1_KF513177	Cefazolin
+blaCMH-3_1_KX192165	Cefazolin
+blaCMY-2_1_X91840	Cefazolin, Ceftriaxone, Flomoxef
+blaCTX-M-14_1_AF252622	Cefazolin
+blaCTX-M-15_1_AY044436	Cefazolin
+blaSRT-2_1_AY524276	Cefazolin
+blaACT-15_1_JX440356	Cefazolin
+blaACT-16_1_AB737978	Cefazolin
+blaCTX-M-27_1_AY156923	Cefazolin
+blaACT-7_1_FJ237368	Cefazolin
+blaTEM-215_1_KP050492	Cefazolin
+blaCTX-M-55_1_DQ810789	Cefazolin
+blaDHA-1_1_Y16410	Cefazolin, Flomoxef
+blaACT-5_1_FJ237369	Cefazolin, Flomoxef, Ceftriaxone, Ciprofloxacin
+blaSHV-1_1_AF148850	Cefazolin
+blaOXA-48_1_AY236073	Ertapenem, Cefepime, Cefoperazone, Ceftriaxone
+blaVIM-1_1_Y18050	Ceftriaxone, Flomoxef
+blaVIM-3_1_AF300454	Ceftriaxone
+lnu(A)_1_M14039	Clindamycin
+blaCTX-M-14	Beta-lactam	Cefoperazone
+blaKPC-2	Beta-lactam	Flomoxef
+mecA_1_NC_002745	Penicillin
+mecA_2_NC_002951	Penicillin
+mecA_3_Y13095	Penicillin   
+mecA_4_AB546266	Penicillin
+mecA_5_AB546267	Penicillin 
+mecA_6_BX571856	Penicillin
+mecA_7_HE861945	Penicillin
+mecA_8_NC_007168	Penicillin
+mecA_9_AB505630	Penicillin
