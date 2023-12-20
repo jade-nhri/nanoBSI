@@ -71,5 +71,5 @@ RUN cp seqkit /usr/local/bin
 
 WORKDIR / 
 #set path 
-ENV PATH $PATH:/opt:/opt/:/opt/minimap2/:/opt/centrifuge:/opt/Flye/bin/:/opt/ncbi-blast-2.11.0+/bin:/opt/nanoBSI/
+ENV PATH $PATH:/opt:/opt/:/opt/minimap2/:/opt/centrifuge:/opt/Flye/bin/:/opt/ncbi-blast-2.15.0+/bin:/opt/nanoBSI/
 
