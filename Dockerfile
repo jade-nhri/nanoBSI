@@ -19,7 +19,7 @@ RUN pip3 install biopython pandas lxml six ete3 openpyxl
 
 #Download nanoBSI
 WORKDIR /opt
-RUN git clone 
+RUN git clone https://github.com/jade-nhri/nanoBSI.git
 WORKDIR /opt/nanoBSI
 RUN chmod +x *.py
 
