@@ -48,6 +48,8 @@ WORKDIR /opt/kma
 RUN make
 WORKDIR /opt/pointfinder_db
 RUN python3 INSTALL.py /opt/kma/kma_index
+WORKDIR /opt/resfinder_db
+RUN python3 INSTALL.py /opt/kma/kma_index
 
 #Install Centrifuge 1.0.4
 WORKDIR /opt
