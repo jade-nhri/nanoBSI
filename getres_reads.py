@@ -18,7 +18,8 @@ for i in sorted(mydirs):
     if count==1:
          dfout=df
     else:
-        dfout=dfout.append(df,ignore_index=True)
+        dfout=pd.concat((dfout,df),axis=0)
+        #dfout=dfout.append(df,ignore_index=True)
     os.chdir('..')
 print (os.getcwd())
 print (dfout)
