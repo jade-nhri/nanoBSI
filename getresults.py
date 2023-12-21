@@ -16,12 +16,12 @@ parser.add_argument("-i",
 parser.add_argument("-d",
                     "--DB",
                     type=str,
-                    default="/MyData/mnt/paca/data/2023/BSI/inputFile/antibiotic_name.json",
+                    default="/opt/nanoBSI/antibiotic_name.json",
                     help="input DB path")
 parser.add_argument("-D",
                     "--drug",
                     type=str,
-                    default="/MyData/mnt/paca/data/2023/BSI/inputFile/drug_list.xlsx",
+                    default="/opt/nanoBSI/drug_list.xlsx",
                     help="drug_list file")      
 
 parser.add_argument("-v",
@@ -67,7 +67,7 @@ df_tmp1=df_resistance.iloc[:,[0,6,7,8,9]].copy()
 #print (df_tmp1)
 
 #read Phenotype & Class data
-df_Resfinder_DB=pd.read_excel('/MyData/mnt/paca/data/2023/BSI/inputFile/organizeResfinderDb.xlsx')
+df_Resfinder_DB=pd.read_excel('/opt/nanoBSI/organizeResfinderDb.xlsx')
 
 #改成需要的名稱 
 #change we want to use columns's name
@@ -157,7 +157,7 @@ for barcode in uniBarcode:
 
 
 df_fin=df_fin.merge(df_Resfinder_DB,on='Phenotype',how='left')
-df_fin.to_csv('paca_check.csv',index=False)
+#df_fin.to_csv('paca_check.csv',index=False)
 #print (uniBarcode)
 
 count=0
