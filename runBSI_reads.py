@@ -4,9 +4,14 @@ import subprocess
 import multiprocessing as mp
 import operator
 import pandas as pd
+from ete3 import NCBITaxa
+ncbi = NCBITaxa()
 import warnings
-#warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore")
 warnings.simplefilter("ignore")
+database_path = ncbi.dbfile
+if not os.path.exists(database_path):
+    ncbi.update_taxonomy_database()
 
 threads=8
 multip=24
