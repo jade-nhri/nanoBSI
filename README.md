@@ -36,3 +36,11 @@ Installation
 - [Flye-2.6.1](https://github.com/fenderglass/Flye)
 - [Centrifuge-1.0.4](https://github.com/infphilo/centrifuge)
 - [ResFinder-4.4.2](https://pypi.org/project/resfinder/)
+
+## FASTQ files
+
+https://www.dropbox.com/scl/fi/lbdrmes0kl8954xdmhwe6/fastq_pass.tar.gz?rlkey=y43fxw50mbcedk4plappv7y8d&dl=0
+
+## Quick start
+
+- [Readme](https://www.dropbox.com/scl/fi/mtpmd84ax8zh216hz4a6w/Manual-of-nanoBSI.pdf?rlkey=8p2oabkj7b2px4rg95uj6fa9s&dl=0)
