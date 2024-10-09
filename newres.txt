@@ -16,7 +16,7 @@ blaACT-7_1_FJ237368	Cefazolin
 blaTEM-215_1_KP050492	Cefazolin
 blaCTX-M-55_1_DQ810789	Cefazolin
 blaDHA-1_1_Y16410	Cefazolin, Flomoxef
-blaACT-5_1_FJ237369	Cefazolin, Flomoxef, Ceftriaxone, Ciprofloxacin
+blaACT-5_1_FJ237369	Cefazolin, Flomoxef, Ceftriaxone
 blaSHV-1_1_AF148850	Cefazolin
 blaOXA-48_1_AY236073	Ertapenem, Cefepime, Cefoperazone, Ceftriaxone
 blaVIM-1_1_Y18050	Ceftriaxone, Flomoxef
