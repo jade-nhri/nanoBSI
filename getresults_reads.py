@@ -160,11 +160,14 @@ df_fin=df_fin.merge(df_Resfinder_DB,on='Phenotype',how='left')
 #df_fin.to_csv('paca_check.csv',index=False)
 #print (uniBarcode)
 
+
 count=0
-dfout=pd.DataFrame(columns=['barcode','Species','Phenotype','Class','Note'])
+dfout=pd.DataFrame(columns=['barcode','Credibility','Species','Phenotype','Class','Note'])
 #print (df_species)
 for barcode in uniBarcode:
-#    print (barcode)
+    #print (barcode)
+    dftmpout=pd.DataFrame(columns=['barcode','Credibility','Species','Phenotype','Class','Note'])
+    
     subdf=df_fin[df_fin['barcode']==barcode]
     spe=subdf['Species'].values[0]
     #print (spe)
@@ -173,11 +176,14 @@ for barcode in uniBarcode:
     #print (subdf2)
     pheno=subdf['Phenotype'].values
     clas=subdf['Class'].values
-    #Credibility=subdf2['Credibility'].values[0]
+    Credibility=subdf2['Credibility'].values[0]
+    
     #print (pheno)
     if pheno[0] != '':
         for i,c in zip(pheno,clas):
 #            print (i)
+            if i =='Ampicillin+Sulbactam' :
+                i='Ampicillin'
             for j,k in zip(subdf2['Phenotype'],subdf2['Gene_accession']):
                 #print('{0}\t{1}'.format(j,k))
                 temp=j.split(',')
@@ -187,24 +193,34 @@ for barcode in uniBarcode:
                         count+=1
                         if count==1:
                             #print ('{0}\t{1}\t{2}\t{3}\t{4}'.format(barcode,spe,i,c,k))
-                            dfout=pd.DataFrame([[barcode,spe,i,c,str(k+':'+gene2note[k])]],columns=['barcode','Species','Phenotype','Class','Note'])
+                            dftmpout=pd.DataFrame([[barcode,Credibility,spe,i,c,str(k+':'+gene2note[k])]],columns=['barcode','Credibility','Species','Phenotype','Class','Note'])
                         else:
-                            dfnew=pd.DataFrame([[barcode,spe,i,c,str(k+':'+gene2note[k])]],columns=['barcode','Species','Phenotype','Class','Note'])
+                            dfnew=pd.DataFrame([[barcode,Credibility,spe,i,c,str(k+':'+gene2note[k])]],columns=['barcode','Credibility','Species','Phenotype','Class','Note'])
                             #print ('{0}\t{1}\t{2}\t{3}\t{4}'.format(barcode,spe,i,c,k))
     
-                            dfout=pd.concat([dfout,dfnew],ignore_index=True)
+                            dftmpout=pd.concat([dftmpout,dfnew],ignore_index=True)
                     #else:
                         #print (f'####need check:\t{barcode} \t {m}')
+
         #print (dfout)
     #if barcode not in dfout['barcode'].values:
     else:
         count+=1
-        tmpdf=pd.DataFrame([[barcode,spe,'','','']],columns=['barcode','Species','Phenotype','Class','Note'])
-        dfout=pd.concat([dfout,tmpdf],ignore_index=True)
+        tmpdf=pd.DataFrame([[barcode,Credibility,spe,'','','']],columns=['barcode','Credibility','Species','Phenotype','Class','Note'])
+        dftmpout=pd.concat([dftmpout,tmpdf],ignore_index=True)
         #print (dfout)
-     
+    detailPhenotypeList=dftmpout['Phenotype'].to_list()
+    #print(detailPhenotypeList)
+    subdf_noDetail=subdf[~subdf['Phenotype'].isin(detailPhenotypeList)]
+    #print(subdf_noDetail)
+    dftmpout=pd.concat([dftmpout,subdf_noDetail])    
+    dftmpout['Credibility']=Credibility
+    
+    
+    dfout=pd.concat([dfout,dftmpout])
     
 dfoutout=dfout.drop_duplicates(subset=['barcode','Phenotype','Note'])
+#print (dfoutout)
 #print (dfoutout)
 
 
